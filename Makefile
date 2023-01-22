@@ -3,8 +3,8 @@ V=20220514
 PREFIX = /usr/local
 
 update:
-	gpg --recv-keys $(cat blackjaro-trusted | cut -d: -f1) $(cat biglinux-revoked)
-	gpg --export --armor $(cat blackjaro-trusted | cut -d: -f1) $(cat biglinux-revoked) > blackjaro.gpg
+	gpg --recv-keys $(cat blackjaro-trusted | cut -d: -f1) $(cat blackjaro-revoked)
+	gpg --export --armor $(cat blackjaro-trusted | cut -d: -f1) $(cat blackjaro-revoked) > blackjaro.gpg
 
 install:
 	install -dm755 $(DESTDIR)$(PREFIX)/share/pacman/keyrings/
